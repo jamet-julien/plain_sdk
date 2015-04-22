@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script src="api.js"></script>
+		<style>
+
+			.connect {
+			  background: #d6d6d6;
+			  background-image: -webkit-linear-gradient(top, #d6d6d6, #a6a6a6);
+			  background-image: -moz-linear-gradient(top, #d6d6d6, #a6a6a6);
+			  background-image: -ms-linear-gradient(top, #d6d6d6, #a6a6a6);
+			  background-image: -o-linear-gradient(top, #d6d6d6, #a6a6a6);
+			  background-image: linear-gradient(to bottom, #d6d6d6, #a6a6a6);
+			  -webkit-border-radius: 4;
+			  -moz-border-radius: 4;
+			  border-radius: 4px;
+			  font-family: Arial;
+			  color: #ffffff;
+			  font-size: 13px;
+			  padding: 10px 20px 10px 20px;
+			  text-decoration: none;
+			  width:48px;
+			  cursor: pointer;
+			}
+
+			.connect:hover {
+			  background: #3cb0fd;
+			  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+			  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+			  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+			  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+			  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+			  text-decoration: none;
+
+			}
+
+		</style>
+	</head>
+	<body class="theme-1">
+
+		<div class="connect" id="btn">connect</div>
+
+	<script>
+
+
+		var btn = document.getElementById('btn');
+
+		/**
+		 * [handleLoadAuth description]
+		 * @return {[type]} [description]
+		 */
+		function handleLoadAuth(){
+			btn.innerHTML = 'connect';
+			api.auth.authorize({
+				'client' : 'kqlsdj lkj ',
+				'key'    : '3cb0fd3cb0fd'
+			}, handleAuthentication);
+		}
+
+		/**
+		 * [handleAuthentication description]
+		 * @param  {[type]} oResult [description]
+		 * @return {[type]}         [description]
+		 */
+		function handleAuthentication( oResult){
+			if( oResult == 'OK'){
+				btn.innerHTML = 'bonjour';
+			}else{
+				btn.innerHTML = 'domage';
+
+			}
+		}
+
+
+
+		btn.addEventListener( 'click', function(){
+			api.load('auth', {'callback': handleLoadAuth, 'name': 'julien'});
+		});
+
+	</script>
+
+	</body>
+</html>
