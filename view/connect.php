@@ -58,6 +58,8 @@ extract( $aPost);
 			user_id : <?= $client;?><br/>
 			key     : <?= $key;?><br/>
 		</div>
+		<br/>
+		<br/>
 		<div class="connect" id="btn_ok">ok</div>
 		<div class="connect" id="btn_canceled">canceled</div>
 

@@ -54,7 +54,7 @@
             }
 
 
-            return sUrl+sSeparator+(new Date*1);
+            return sUrl+sSeparator+(new Date()*1);
         }
 
         /**
