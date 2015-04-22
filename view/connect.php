@@ -1,13 +1,15 @@
 <?php
 
-$aDefaultPost = array(
-	'user_id' => 0,
-	'key'     => 0,
+$aPost = array(
+	'client' => 'vide',
+	'key'     => 'vide',
 );
 
-if( isset( $_POST) && empty( $_POST)){
-	$aPost = array_merge( $aDefaultPost, $_POST);
+if( isset( $_POST) && !empty( $_POST)){
+	$aPost = array_merge( $aPost, $_POST);
 }
+
+extract( $aPost);
 
 ?>
 
@@ -53,7 +55,7 @@ if( isset( $_POST) && empty( $_POST)){
 	<body class="theme-1">
 
 		<div>
-			user_id : <?= $user_id;?><br/>
+			user_id : <?= $client;?><br/>
 			key     : <?= $key;?><br/>
 		</div>
 		<div class="connect" id="btn_ok">ok</div>
