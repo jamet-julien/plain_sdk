@@ -39,7 +39,7 @@
 	</head>
 	<body class="theme-1">
 
-		<div class="connect" id="btn">connect</div>
+		<div class="connect" id="btn">launch</div>
 
 	<script>
 
@@ -51,10 +51,10 @@
 		 * @return {[type]} [description]
 		 */
 		function handleLoadAuth(){
-			btn.innerHTML = 'connect';
+			btn.innerHTML = 'launch';
 			api.auth.authorize({
-				'client' : 'kqlsdj lkj ',
-				'key'    : '3cb0fd3cb0fd'
+				'client' : 'application_test',
+				'key'    : 'key_de_application_test'
 			}, handleAuthentication);
 		}
 
@@ -65,9 +65,9 @@
 		 */
 		function handleAuthentication( oResult){
 			if( oResult == 'OK'){
-				btn.innerHTML = 'bonjour';
+				btn.innerHTML = 'Connecté';
 			}else{
-				btn.innerHTML = 'domage';
+				btn.innerHTML = 'Non connecté';
 
 			}
 		}

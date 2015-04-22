@@ -1,3 +1,16 @@
+<?php
+
+$aDefaultPost = array(
+	'user_id' => 0,
+	'key'     => 0,
+);
+
+if( isset( $_POST) && empty( $_POST)){
+	$aPost = array_merge( $aDefaultPost, $_POST);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,6 +34,7 @@
 			  text-decoration: none;
 			  width:48px;
 			  cursor: pointer;
+			  display:inline-block;
 			}
 
 			.connect:hover {
@@ -38,14 +52,10 @@
 	</head>
 	<body class="theme-1">
 
-		<?php
-
-		echo '<pre>';
-		print_r( $_POST);
-		echo '</pre>';
-
-		?>
-
+		<div>
+			user_id : <?= $user_id;?><br/>
+			key     : <?= $key;?><br/>
+		</div>
 		<div class="connect" id="btn_ok">ok</div>
 		<div class="connect" id="btn_canceled">canceled</div>
 
