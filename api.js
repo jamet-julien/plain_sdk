@@ -12,9 +12,11 @@
         function _computeOption( oOption){
             var oOptionOut = {};
             typeof oOption == 'function' && ( oOptionOut = {} , oOptionOut.callback = oOption);
+
             for( var sKey in oOption){
                 if( !oOptionOut[sKey]) oOptionOut[sKey] = oOption[sKey];
             }
+
             return oOptionOut;
 
         }
@@ -44,15 +46,10 @@
          */
         function _computeUrl( sLib){
 
-            sUrl = _sUrlPattern.replace( '[:LIB:]', sLib);
-
-
             var sSeparator = '?';
 
-            if( sUrl.indexOf("?")>=0){
-                sSeparator = '&';
-            }
-
+            sUrl = _sUrlPattern.replace( '[:LIB:]', sLib);
+            if( sUrl.indexOf("?")>=0) sSeparator = '&';
 
             return sUrl+sSeparator+(new Date()*1);
         }
@@ -64,8 +61,8 @@
          */
         function _computeScript( sUrlScript) {
             var sTag  = "script";
-            oScript   = document.createElement(sTag);
-            oScript.setAttribute("src", sUrlScript);
+            oScript   = document.createElement( sTag);
+            oScript.setAttribute( "src", sUrlScript);
             oScript.async = "true";
             return oScript;
         }

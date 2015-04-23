@@ -95,7 +95,7 @@
         }
 
         /**
-         * [init description]
+         * [init !IMPORTANT car utilisé par Api parent]
          * @param  {[type]} oOption [description]
          * @return {[type]}         [description]
          */
@@ -107,7 +107,7 @@
         }
 
         return {
-            init : init,
+            init      : init,
             authorize : authorize
         };
 
