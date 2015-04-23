@@ -30,12 +30,8 @@
 
             var oLibParent = global.api;
 
-            if( oLibParent[sLib]){
-
-                if('function' == typeof( oLibParent[sLib].init)){
-                    oLibParent[sLib].init( _oLib[sLib].option);
-                }
-
+            if( oLibParent[sLib] && 'function' == typeof( oLibParent[sLib].init)){
+                oLibParent[sLib].init( _oLib[sLib].option);
             }
 
             if( _oLib[sLib].option.callback){
