@@ -8,7 +8,7 @@ Mise place d'un SDK viérge afin de construire en fonction des projets un ensemb
 - fonctionnel et souplesse
     - rendre modifiable l'url "pattern" pour le chargment des librairie
     - validation jsHint
-    - prevoir les cas pas default si pas de deuxiéme paramétre
+    - -prevoir les cas pas default si pas de deuxiéme paramétre-
     - recherche de "extend" possible pour les module chargé avec fonction "init" déjà intégrée
 
 ## Fonctionnement
