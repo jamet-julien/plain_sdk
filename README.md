@@ -3,9 +3,16 @@ plain SDK
 
 Mise place d'un SDK viérge afin de construire en fonction des projets un ensemble de librairie.
 
-### Fonctionnement
+## Features
 
-## exemple simple
+- fonctionnel et souplesse
+    - rendre modifiable l'url "pattern" pour le chargment des librairie
+    - validation jsHint
+
+
+## Fonctionnement
+
+### exemple simple
 ```javascript
     /**
      * [handleLoadSample description]
@@ -25,7 +32,7 @@ Mise place d'un SDK viérge afin de construire en fonction des projets un ensemb
 ```
 
 
-## exemple un poil plus complexe
+### exemple un poil plus complexe
 ```javascript
     /**
      * [handleLoadSample description]
