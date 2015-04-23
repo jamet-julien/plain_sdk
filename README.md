@@ -6,9 +6,8 @@ Mise place d'un SDK viérge afin de construire en fonction des projets un ensemb
 ## Features
 
 - fonctionnel et souplesse
-    - rendre modifiable l'url "pattern" pour le chargment des librairie
     - validation jsHint
-    - recherche de "extend" possible pour les module chargé avec fonction "init" déjà intégrée
+    - recherche de "extend" possible pour les modules chargés avec fonction "init" déjà intégrée
 
 ## Fonctionnement
 
@@ -28,7 +27,13 @@ Mise place d'un SDK viérge afin de construire en fonction des projets un ensemb
     }
 
     // chargement de la librairie "sample" et lors du chargement lancement de la fonction "handleLoadSample"
+    // ICI par défault charge le script "http://localhost:8888/api_sdk/js/api.php?lib=sample"
     api.load('sample',  handleLoadSample);
+
+    // pour modifier le pattern de la librairie
+    // ICI le script "http://www.domain.com/sample.class.js" sera chargé
+    api.setLibPattern('http://www.domain.com/[:LIB:].class.js')
+       .load('sample',  handleLoadSample);
 ```
 
 

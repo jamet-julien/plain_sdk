@@ -106,9 +106,24 @@
             }
         }
 
-        return {
-            load : load
-        };
+        /**
+         * [setLibPattern description]
+         * @param {[type]} sUrl [description]
+         */
+        function setLibPattern( sUrl){
+            _sUrlPattern = sUrl;
+            return oPublic;
+        }
+
+        /************************
+        * PUBLIC OUT
+        *************************/
+        oPublic = {
+            load : load,
+            setLibPattern : setLibPattern
+        }
+
+        return oPublic;
 
     })();
 
