@@ -11,7 +11,11 @@
          */
         function _computeOption( oOption){
             var oOptionOut = {};
-            typeof oOption == 'function' && ( oOptionOut = {} , oOptionOut.callback = oOption);
+
+            if( typeof( oOption) == 'function'){
+                oOptionOut          = {} ;
+                oOptionOut.callback = oOption;
+            }
 
             for( var sKey in oOption){
                 if( !oOptionOut[sKey]) oOptionOut[sKey] = oOption[sKey];
@@ -28,10 +32,10 @@
         function _launchEvent( sLib){
 
 
-            var oLibParent = global.api;
+            var oAPI = global.api;
 
-            if( oLibParent[sLib] && 'function' == typeof( oLibParent[sLib].init)){
-                oLibParent[sLib].init( _oLib[sLib].option);
+            if( oAPI[sLib] && 'function' == typeof( oAPI[sLib].init)){
+                oAPI[sLib].init( _oLib[sLib].option);
             }
 
             if( _oLib[sLib].option.callback){
@@ -78,7 +82,12 @@
                 oLib.dom.addEventListener( 'load', function(){
                     _launchEvent.apply( null, [oLib.name]);
                 });
-                (oDomParent = document.getElementsByTagName("script")[0])? oDomParent.parentNode.insertBefore( oLib.dom, oDomParent) : (document.head || document.body || document.documentElement).appendChild( oLib.dom);
+                if(oDomParent = document.getElementsByTagName("script")[0]){
+                    oDomParent.parentNode.insertBefore( oLib.dom, oDomParent) ;
+                }else{
+                    oDomParent = ( document.head || document.body || document.documentElement);
+                    oDomParent.appendChild( oLib.dom);
+                }
             }
         }
 
@@ -121,7 +130,7 @@
         oPublic = {
             load : load,
             setLibPattern : setLibPattern
-        }
+        };
 
         return oPublic;
 
