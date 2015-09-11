@@ -12,7 +12,7 @@
         function _receiveMessage( oPostMessage){
 
             if( _fCallback){
-                _fCallback.apply(null, [oPostMessage.data]);
+                 _fCallback.apply(null, [ JSON.parse( oPostMessage.data)]);
             }
 
             if( oPopup){
@@ -115,4 +115,4 @@
 
     global.api.auth = apiAuth || {};
 
-})(window, 'http://localhost:8888/api_sdk/view/connect.php');
+})(window, 'http://localhost:8888/web/javascript/02-plugin/plain-sdk/view/connect.php');
