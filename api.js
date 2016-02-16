@@ -165,7 +165,7 @@
             var sDomain  = sUrl.substring(0, sUrl.indexOf('/', 8));
 
             if( sDomain+'/' != _sRootUrl){
-                // on fait une preconnection pour la suite des url demandées
+                // on fait une preconnection pour la suite des urls demandées
                 _preconnectTo( sDomain);
             }
 

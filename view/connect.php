@@ -79,13 +79,17 @@ extract( $aPost);
 		 */
 
 		document.getElementById('btn_ok').addEventListener( 'click', function(){
-
-			oEventParent.source.postMessage( "OK", oEventParent.origin);
+			var oResult = {
+						message:"OK"
+			};
+			oEventParent.source.postMessage( JSON.stringify( oResult), oEventParent.origin);
 		});
 
 		document.getElementById('btn_canceled').addEventListener( 'click', function(){
-
-			oEventParent.source.postMessage( "CANCELED", oEventParent.origin);
+			var oResult = {
+						message:"CANCELED"
+			};
+			oEventParent.source.postMessage( JSON.stringify( oResult), oEventParent.origin);
 		});
 
 	</script>

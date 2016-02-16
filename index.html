@@ -63,7 +63,7 @@
 		 * @return {[type]}         [description]
 		 */
 		function handleAuthentication( oResult){
-			if( oResult == 'OK'){
+			if( oResult.message == 'OK'){
 				btn.innerHTML = 'Connecté';
 			}else{
 				btn.innerHTML = 'Non connecté';
