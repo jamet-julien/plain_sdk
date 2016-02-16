@@ -12,7 +12,7 @@
         function _receiveMessage( oPostMessage){
 
             if( _fCallback){
-                 _fCallback.apply(null, [ JSON.parse( oPostMessage.data)]);
+                 _fCallback.apply( null, [ JSON.parse( oPostMessage.data)]);
             }
 
             if( oPopup){
